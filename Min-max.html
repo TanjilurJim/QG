@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>MIN MAX & Weight Converter</title>
+
+</head>
+
+<body>
+
+    <div>
+
+
+        <h1>
+            <center><a href="index.html"><b><p style="color:rgb(168, 41, 136);"><button>Back</button></b></p></a></center>
+        </h1>
+
+    </div>
+
+    <br><br><br><br><br><br><br>
+    <h1 style="color:rgb(161, 30, 107); text-align: center;">Calculation</h1>
+    <h2>
+        <table style="text-align: center; color:rgb(9, 9, 19); width=" 50% border="1%" align="center">
+    </h2>
+    <tr>
+        <td width="80%">Input the number series:</td>
+        <td width="90%"><input name="table" type="text" id="table" placeholder="" /></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Max :</td>
+        <td>
+            <div id="max"> </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Min :</td>
+        <td>
+            <div id="min"> </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Sum :</td>
+        <td>
+            <div id="sum"> </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Average :</td>
+        <td>
+            <div id="avg"> </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Reverse Order :</td>
+        <td>
+            <div id="reverse"> </div>
+        </td>
+    </tr>
+
+    </table>
+    <center><button class="button" onclick="calculate()">Submit</button>
+        <center>
+
+
+            <script>
+                function calculate() {
+                    var values = document.getElementById('table').value.split(/,/g);
+                    var sum = values.reduce(function(a, b) {
+                        return parseInt(a) + parseInt(b);
+                    });
+                    document.querySelector('#max').innerHTML = values.max();
+                    document.querySelector('#min').innerHTML = values.min();
+                    document.querySelector('#sum').innerHTML = sum;
+                    document.querySelector('#avg').innerHTML = sum / values.length;
+                    document.querySelector('#reverse').innerHTML = values.reverse().join(',');
+                }
+
+                Array.prototype.max = function() {
+                    return Math.max.apply(null, this);
+                };
+
+                Array.prototype.min = function() {
+                    return Math.min.apply(null, this);
+                };
+            </script>
+
+</body>
+
+</html>

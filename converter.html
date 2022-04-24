@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Hero Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="">
+
+
+        <h1>
+            <a href="index.html"><b><p style="color:rgb(168, 41, 136);"><button>Home</button></b></p></a>
+        </h1>
+
+    </div>
+    <h2 style="color:black;">
+        <center>Hero Converter</center>
+    </h2>
+    <div class="folder">
+
+        <table class="table2">
+            <center>
+                <p><b>Convert</b></p>
+                <input type='text' id="val">
+
+                <select id="Type">
+        <option value="kg">lb to kg</option>
+        <option value="lb">kg to lb</option>
+       
+        </select>
+                <span></span>
+                <button type="button" onclick="convert()">Convert</button>
+                <input type='text' id="result">
+                <style>
+                    body {
+                        background-image: url(02ccfe.png);
+                        background-position: center;
+                    }
+                </style>
+
+
+            </center>
+            <script>
+                function convert() {
+                    var num1 = document.getElementById("Type");
+                    var num2 = num1.value;
+
+                    if (num2 == "kg") {
+                        var kilogram = PoundToKg();
+                        return document.getElementById("result").value = kilogram + " Kg";
+                    } else {
+                        var pound = KgToPound();
+                        return document.getElementById("result").value = pound + " lb";
+                    }
+
+                }
+
+                function PoundToKg() {
+                    var con = document.getElementById("val").value;
+                    return con * 0.4536;
+                }
+
+                function KgToPound() {
+                    var con = document.getElementById("val").value;
+                    return con * 2.2046;
+                }
+            </script>
+
+
+
+
+
+
+        </table>
+
+    </div>
+</body>
+
+</html>

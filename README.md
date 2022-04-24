@@ -1,1 +1,1 @@
-# QG
+# QuoteGenerator
